@@ -1,5 +1,8 @@
 const { httpGet } = require('./mock-http-interface');
 
+const SUCCESS = 'Arnie Quote';
+const FAIL = 'FAILURE';
+
 const getArnieQuotes = async (urls) => {
   // TODO: Implement this function.
   // return results;
@@ -15,7 +18,7 @@ const getArnieQuotes = async (urls) => {
 
     let output = {};
     
-    output[item['status'] === 200 ? 'Arnie Quote' : 'FAILURE'] = result.message;
+    output[item['status'] === 200 ? SUCCESS : FAIL ] = result.message;
 
     quotes.push(output);
 
